@@ -78,3 +78,21 @@ Các yếu tố ảnh hưởng:
   d(trans): Trễ do truyền = L/R (Chiều dài bits / Băng thông bps )
   d(prop): Trễ do lan truyền d/s (Đồ dài vật lý / tốc độ lan truyền ~ 2.10^8m.s)
 ```
+
+# CHIA SUBNET
+
+```
+  m = 32 - n - SUBNET_MASK_HIEN_TAI
+
+  B1: Số subnet: 2^n
+  B2: Số host: 2^m - 2
+  B3: Bước nhảy 2^m
+  B4: Subnetmask mới 256 - Bước nhảy
+  B5: Các Subnet ID gồm
+    + Subnet ID đầu tiên = 0
+    + Subnet ID kế tiếp = Subnet hiện tại + Bước nhảy
+  B6: Trong Subnet ID.
+    + Host đầu: Subnet ID + 1
+    + Host cuối: Subnet ID + Bước nhảy – 2
+    + Địa chỉ Broadcast: Host cuối + 1
+```
