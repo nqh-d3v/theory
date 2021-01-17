@@ -98,3 +98,17 @@ mức logic business.
 - Một số hệ quản trị CSDL có những tool hỗ trợ Debug.
 - Đòi hỏi kỹ thuật của người lập trình cơ sở dữ liệu tốt. Điều này làmcho vấn đề
 bảo trì và nâng cấp khó khăn.
+
+## AJAX
+```JS
+  $.ajax({
+    url: "script.php",
+    method: "POST",
+    data: {},
+    dataType: "jsonp"
+  }).done((data) => {
+    // handle data
+  }).fail((jqXHR, status) => {
+    // handle error
+  })
+```
