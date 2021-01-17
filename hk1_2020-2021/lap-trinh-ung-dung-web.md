@@ -1,4 +1,3 @@
-# CHAPTER 1
 ## Native app - Hybrid app - Web app - Website
 - **Native app:** là một ứng dụng gốc được thiết kế để hoạt động trên một nền tảng hay một thiết bị nhất định ( Android có JAVA, Kotlin,... ).
 - **Hybrid app:** là một ứng dụng lai, là sự kết hợp giữa Native app và web app. Theo đó các phần cơ bản của ứng dụng được viết theo ngôn ngữ web nhưng được đặt trong native container. Vì là sự kết hợp điểm mạnh của native app và web app nên nó khai thác được trải nghiệm cao nhất của nền tảng.
@@ -55,3 +54,47 @@ Thẻ `table`:
 |         | before(c)   | Chèn nội dung _c_ vào trước element thỏa **e** |
 
 Tương tự prepend(c).
+
+## Cookie & Session
+### Cookie
+- Cookie là một đoạn văn bản ghi thông tin được tạo ra và lưu trên trình duyệt của máy người dùng. Cookie thường được tạo ra khi người dùng truy cập một website, cookie sẽ ghi nhớ những thông tin như tên đăng nhập, mật khẩu, các tuỳ chọn do người dùng lựa chọn đi kèm. Các thông tin này được lưu trong máy tính để nhận biết người dùng khi truy cập vào một trang web.
+- Cookie thường được dùng để lưu trữ các tùy chọn riêng của trang web từng user, nó là một file nhỏ được Server chỉ định lưu trữ trên máy tính của Client và PHP có thể truy xuất tới được. Và để sử dụng được Cookie thì trình duyệt phải hỗ trợ chức năng này.
+- Cookie sẽ không bị mất khi bạn đóng ứng dụng, nó phụ thuộc vào thời gian sống mà bạn thiết lập cho nó. Ví dụ bạn thiết lập Cookie lưu trữ thông tin đăng nhập trong vòng 15 phút thì sau 15 phút mà bạn không có một thao tác thay đổi trên nó thì Cookie của bạn sẽ bị chết.
+### Session
+- Session hay còn gọi là một phiên làm việc đơn giản là 1 cách để lưu lại dữ liệu của người dùng sử dụng website một cách tạm thời. Một session bắt đầu khi client gửi request đến sever, nó tồn tại xuyên suốt từ trang này đến trang khác trong ứng dụng và chỉ kết thúc khi hết thời gian timeout hoặc khi bạn đóng ứng dụng. Giá trị của session sẽ được lưu trong một tệp tin trên máy chủ.
+- Bạn có thể tuỳ ý quyết định xem nên lưu trữ những thông tin nào vào Session, Thông thường chúng ta chỉ nên lưu trữ những thông tin tạm thời trong session.
+- Với mỗi session sẽ được cấp phát một định danh duy nhất SessionID. Khi kết thúc một phiên làm việc và bắt đầu một phiên mới, dĩ nhiên sẽ được cấp một SessionID khác với trước đó.
+
+## Procedure & Function in MySQL
+### Procedure
+- Procedure (Thủ tục) là một chương trình trong cơ sở dữ liệu gồm nhiều câu lệnh được lưu lại thành một nhóm đơn vị xử lý logic, được lưu trữ trên Database Server và được tái sử dụng cho những lần sau.
+- Khi một câu lệnh gọi chạy stored procedure lần đầu tiên thì SQL Server sẽ chạy nó và lưu trữ vào **bộ nhớ đệm (plan cache)**, những lần tiếp theo SQL Server sẽ sử dụng lại plan cache nên sẽ cho tốc độ xử lý tối ưu.
+- Stored procedure tiện lợi cho người quản trị database (DBA), giúp DBA tạo ra những nhóm câu lệnh và gửi đến một bô phận khác mà họ sẽ không cần quan tâm đến nội dung bên trong stored procedure có gì, mà chỉ quan tâm đến tham số đầu vào và đầu ra
+Tính trừu tượng
+
+**Ưu điểm:**
+- **Tính trừu tượng:** Stored Procedure cung cấp một lớp trừu tượng cho các ứng dụng và ngôn ngữ
+lập trình thao tác với hệ quản trị cơ sở dữ liệu. Việc thực hiện cùng 1 thao tác
+giống nhau đến cơ sở dữ liệu trên 2 ứng dụng (hoặc nhiều hơn) hay ngôn ngữ lập
+trình khác nhau không đòi hỏi người lập trình phải viết lại hoàn toàn các thao tác
+đó.
+- **Hiệu năng:** Stored Procedure được cung cấp bởi hệ quản trị cơ sở dữ liệu, được biên dịch và
+lưu lại 1 lần duy nhất, được gọi đến và thao tác trực tiếp bởi hệ quản trị cơ sở dữ
+liệu đó. Vì vậy, hiệu năng đạt được ở mức cao nhất mà hệ quản trị cơ sở dữ liệu
+có thể thực hiện mà không phụ thuộc vào tính chất của ngôn ngữ lập trình bậc
+cao nào.
+- **Bảo mật:** Nếu hệ quản trị cơ sở dữ liệu được tùy chỉnh để chỉ có thể thực hiện thao tác gọi
+đến các Stored Procedure có sẵn cho 1 số người dùng cụ thể, sẽ đảm bảo tính an
+toàn của dữ liệu đối với những người dùng này. Việc phân quyền này đảm bảo
+người dùng chỉ có quyền hạn thay đổi dữ liệu ở mức cho phép của người quản
+trị cơ sở dữ liệu mà không thể can thiệp sâu hơn vào dữ liệu đó.
+
+**Nhược điểm:**
+- Nếu tạo ra quá nhiều Procedure thì hệ quản trị sẽ sử dụng bộ nhớ để lưu trữ các
+thủ tục này khá nhiều. Ngoài ra nếu bạn thực hiện quá nhiều xử lý trong mỗi thủ
+tục thì đồng nghĩa với việc CPU sẽ làm việc nặng hơn..
+- Nếu sử dụng thủ tục thì sẽ rất khó phát triển trong ứng dụng, gây khó khăn ở
+mức logic business.
+- Một số hệ quản trị CSDL có những tool hỗ trợ Debug.
+- Đòi hỏi kỹ thuật của người lập trình cơ sở dữ liệu tốt. Điều này làmcho vấn đề
+bảo trì và nâng cấp khó khăn.
