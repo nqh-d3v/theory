@@ -43,13 +43,11 @@ Thẻ `table`:
 | :lt(i)    | Tất cả phần tử nhỏ hơn vị trí i       |
 | :header   | Chọn tất cả các header (h1, ..., h6)  |
 | :not(...) | Tất cả element không thỏa (...)       |
-|:----:     | :---                                  |
 
 ### Chèn nội dung
 | $(e).   | append(c)   | Chèn nội dung _c_ vào cuối element thỏa **e**  |
 |         | appendTo(c) | Chèn nội dung _e_ vào cuối element thỏa **c**  |
 |         | after(c)    | Chèn nội dung _c_ vào sau element thỏa **e**   |
 |         | before(c)   | Chèn nội dung _c_ vào trước element thỏa **e** |
-|:----:   |:----:       |:---                                            |
 
 Tương tự prepend(c).
