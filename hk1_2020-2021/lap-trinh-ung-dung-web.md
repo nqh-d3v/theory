@@ -36,6 +36,7 @@ Thẻ `table`:
 
 ## JQUERY
 ### Filter
+|           |                                       |
 |:----:     | :---                                  |
 | :even     | Phần tử chẵn                          |
 | :odd      | Phần tử lẽ                            |
