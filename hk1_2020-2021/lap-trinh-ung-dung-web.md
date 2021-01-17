@@ -36,9 +36,8 @@ Thẻ `table`:
 
 ## JQUERY
 ### Filter
-|           |                                       |
-|:----:     | :---                                  |
 | :even     | Phần tử chẵn                          |
+|:----:     | :---                                  |
 | :odd      | Phần tử lẽ                            |
 | :eq(i)    | Phần tử tại vị trí i                  |
 | :gt(i)    | Tất cả phần tử lớn hơn vị trí i       |
@@ -47,8 +46,8 @@ Thẻ `table`:
 | :not(...) | Tất cả element không thỏa (...)       |
 
 ### Chèn nội dung
-|:----:   |:----:       |:---                                            |
 | $(e).   | append(c)   | Chèn nội dung _c_ vào cuối element thỏa **e**  |
+|:----:   |:----:       |:---                                            |
 |         | appendTo(c) | Chèn nội dung _e_ vào cuối element thỏa **c**  |
 |         | after(c)    | Chèn nội dung _c_ vào sau element thỏa **e**   |
 |         | before(c)   | Chèn nội dung _c_ vào trước element thỏa **e** |
